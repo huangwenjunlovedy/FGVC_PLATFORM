@@ -20,7 +20,7 @@ from PyQt5.QtGui import QPixmap, QIcon
 import qtawesome
 from time import sleep
 import sys
-from PyQt5.QtCore import QObject, pyqtSignal, QEventLoop, QTimer, QThread, QTime
+from PyQt5.QtCore import QObject, pyqtSignal, QEventLoop, QTimer, QThread, QTime, QSize
 from PyQt5.QtGui import QTextCursor
 
 

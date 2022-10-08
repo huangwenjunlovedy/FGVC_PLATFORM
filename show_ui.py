@@ -98,9 +98,9 @@ class mywindow(QMainWindow, Ui_MainWindow):
         img = img[:, :, ::-1]
         input_img = preprocess_image(img)
         target_category = None
-        grayscale_cam = grad_cam(input_img, target_category)
+        grayscale_cam = grad_cam(input_img, target_category)   # draw hotmap
         grayscale_cam = cv2.resize(grayscale_cam, (img.shape[1], img.shape[0]))
-        pic = show_cam_on_image(img, grayscale_cam)
+        pic = show_cam_on_image(img, grayscale_cam)   # show the hotmap
         cv2.imwrite("F:\\chapter_3_heatmap\\ad.jpg", pic)
         # print(pic.shape)
 
@@ -117,7 +117,7 @@ class mywindow(QMainWindow, Ui_MainWindow):
         self.lineEdit_12.setText(str(format(pred_con * 100, '.2f')) + '%')  # show the true cls   format(acc5, '.4f')
         self.lineEdit_13.setText(str(format(time.time() - start, '.2f')) + '秒')
 
-        top_20_img = knn_retrival(self.image_name, model)
+        top_20_img = knn_retrival(self.image_name, model)  # knn 检索
         print('top_20_img', top_20_img)
         self.ListWidget.clear()
         for img_path in top_20_img:

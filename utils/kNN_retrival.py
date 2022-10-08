@@ -73,6 +73,7 @@ def knn_retrival(image_name, model):
     # load the saved features
     dir = 'G:/github_files/fine_grained_classfication_platform/features/{}'.format(image_name.split('/')[-4])
     train_features = np.load(dir + '/train_set_feature.npy', allow_pickle=True).item()
+    print('train_features_path=', dir + '/train_set_feature.npy')
     X_train = train_features['data']
     x_img_path = train_features['all_img_path']
 
